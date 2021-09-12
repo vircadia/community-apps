@@ -48,8 +48,8 @@ var tablet = Tablet.getTablet("com.highfidelity.interface.tablet.system");
 var button;
 
 button = tablet.addButton({
-    icon: LOCATION_ROOT_URL + "Icons/blocks-inactive.svg?" + Date.now(),
-    activeIcon: LOCATION_ROOT_URL + "Icons/blocks-active.svg?" + Date.now(),
+    icon: LOCATION_ROOT_URL + "blocks-inactive.svg?" + Date.now(),
+    activeIcon: LOCATION_ROOT_URL + "blocks-active.svg?" + Date.now(),
     text: "BLOCKS",
     sortOrder: 12
 });
