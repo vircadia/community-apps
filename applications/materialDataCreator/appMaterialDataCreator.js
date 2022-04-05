@@ -250,10 +250,10 @@
                 position: prop.position
             };
         }         
-        if (shape === "vircadia"){
+        if (shape === "brand"){
             newDemoDefinition = {
                 type: "Model", 
-                modelURL: ROOT + "models/vircadia.fbx",
+                modelURL: ROOT + "models/brand.fbx",
                 name: "MATERIAL DEMO",
                 grab: {
                     grabbable: true
