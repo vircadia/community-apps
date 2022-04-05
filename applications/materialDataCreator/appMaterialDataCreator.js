@@ -14,10 +14,10 @@
     var jsMainFileName = "appMaterialDataCreator.js";
     var ROOT = Script.resolvePath('').split(jsMainFileName)[0];
     
-    var APP_NAME = "MAT-GEN"; 
-    var APP_URL = ROOT + "materialDataCreator.html"; 
+    var APP_NAME = "MAT-GEN";
+    var APP_URL = ROOT + "materialDataCreator.html";
     var APP_ICON_INACTIVE = ROOT + "images/icon_materialDate_inactive.png";
-    var APP_ICON_ACTIVE = ROOT + "images/icon_materialDate_active.png"; 
+    var APP_ICON_ACTIVE = ROOT + "images/icon_materialDate_active.png";
     var appStatus = false;
     var channel = "materialDataCreator.ak.vircadia";
     var nightmode = false;
@@ -74,9 +74,8 @@
                     shape: "Cube",
                     position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0.25, z: -5 }))
                 },"local");
-        
-        
-        
+
+
         materialID = Entities.addEntity({
                     parentID: demoID,
                     parentMaterialName: "0",
@@ -145,17 +144,17 @@
                 if (nightmode === false) {
                     //Set Night
                     Entities.editEntity(nightZoneID[0],{"visible": true});
-                    Entities.editEntity(blueSpotID[0],{"visible": true});                    
+                    Entities.editEntity(blueSpotID[0],{"visible": true});
                     Entities.editEntity(dayZoneID[0],{"visible": false});
                     nightmode = true;
                 } else {
                     //Set Day
                     Entities.editEntity(nightZoneID[0],{"visible": false});
-                    Entities.editEntity(blueSpotID[0],{"visible": false});                     
-                    Entities.editEntity(dayZoneID[0],{"visible": true});                    
+                    Entities.editEntity(blueSpotID[0],{"visible": false});
+                    Entities.editEntity(dayZoneID[0],{"visible": true});
                     nightmode = false;
                 }
-            }            
+            }
         }
     }
 
