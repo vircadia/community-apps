@@ -103,10 +103,46 @@ var metadata = { "applications":
             "isActive": true,
             "directory": "blocks",
             "name": "Blocks",
-            "description": "Script to create blocks in a Minecraft way",
+            "description": "Script to create blocks in a Minecraft way.",
             "jsfile": "blocks/Blocks.js",
             "icon": "blocks/blocks-inactive.svg",
             "caption": "BLOCKS"
+        },
+        {
+            "isActive": true,
+            "directory": "aaswitcher",
+            "name": "Anti-Aliasing Switcher",
+            "description": "Allow different Anti-Aliasing configuration for HMD and Desktop. This application changes automatically the Anti-Aliasing configuration as you put on or remove your VR Headset.",
+            "jsfile": "aaswitcher/app-aaSwitcher.js",
+            "icon": "aaswitcher/icon_inactive.png",
+            "caption": "AA-SWITCH"
+        },
+        {
+            "isActive": true,
+            "directory": "home",
+            "name": "Home",
+            "description": "Add a shortcut on your tablet to teleport home.",
+            "jsfile": "home/app_home.js",
+            "icon": "home/appicon_i.png",
+            "caption": "HOME"
+        },
+        {
+            "isActive": true,
+            "directory": "lightBulb",
+            "name": "Light Bulb Generator",
+            "description": "Generate rapidly a visible glowing light source with its light beam.",
+            "jsfile": "lightBulb/app-lightBulb.js",
+            "icon": "lightBulb/icon_inactive.png",
+            "caption": "BULB"
+        },
+        {
+            "isActive": true,
+            "directory": "notes",
+            "name": "Notes",
+            "description": "A simple notepad that can be used while you are in-world.",
+            "jsfile": "notes/app-notes.js",
+            "icon": "notes/icon_inactive.png",
+            "caption": "NOTES"
         }
     ]
 };
