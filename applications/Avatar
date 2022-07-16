@@ -1,0 +1,58 @@
+/*globals Tablet, Entities, ScriptDiscoveryService*/
+(function () {
+    var urlRoot;
+    var tablet;
+    var shouldInjectMarketplaceCode = false;
+
+    function openWithInstalledCheck() {
+        // TODO: check with running scripts if already installed
+
+        // TODO: if not ensure web page opened gives the options to install
+        tablet.gotoWebScreen(urlRoot + "ReadyPlayerMe.html");
+    }
+    var onWebEventReceived = function (event) {
+        if (typeof event === "string") {
+            event = JSON.parse(event);
+        }
+
+        if (event.type === "readyPlayerMe-wearAvatar") {
+            MyAvatar.setSkeletonModelURL(event.avatarUrl);
+        }
+
+        if (event.type === "readyPlayerMe-installApp") {
+            // TODO: check app not already running, and install if not
+        }
+
+        if (event.type === "readyPlayerMe-uninstallApp") {
+            // TODO: check if app running, and uninstall if it is
+        }
+    };
+
+    var RpmInstaller = function () { };
+
+    RpmInstaller.prototype = {
+        preload: function (entityID) {
+            try {
+                urlRoot = JSON.parse(Entities.getEntityProperties(entityID, 'userData').userData).urlRoot;
+            } catch (e) {
+                print("Unable to find a valid URL");
+                urlRoot = "https://hifi-utils.jollysoft.com/HiFiApps/ReadyPlayerMe/";
+            }
+            tablet = Tablet.getTablet("com.highfidelity.interface.tablet.system");
+
+            tablet.webEventReceived.connect(onWebEventReceived);
+
+            Script.scriptEnding.connect(function () {
+                tablet.removeButton(button);
+            });
+        },
+        clickDownOnEntity: function () {
+            openWithInstalledCheck();
+        },
+        startFarTrigger: function () {
+            openWithInstalledCheck();
+        }
+    };
+
+    return new RpmInstaller();
+});
